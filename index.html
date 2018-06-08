@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>The Council Of Dumdums</title>
-</head>
-<body>
+---
+layout: default
+---
 
-<h1>Hello, World!</h1>
-<p>Eureka.</p>
-
-</body>
-</html> 
+{% for project in site.projects %}
+<div class="card">
+        <div class="card-header span">
+            {{ project.title }}
+        </div>
+        <div class="row">
+        <div class="col-md-8">
+            <div class="card-block">
+            <p class="card-text ml-3">
+                {{ project.description }}
+            </p>
+            <a href="{{ project.readmore }}" class="ml-3 btn btn-primary">Read More</a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="">
+                <img src="{{ project.thumbnail }}" class="img-fluid img-thumbnail">
+            </div>
+        </div>
+        </div>
+    </div>
+{% endfor %}
+    
